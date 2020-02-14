@@ -1,0 +1,38 @@
+#pictainer {
+  display: flex;
+  margin: auto;
+  width: 600px;
+  flex-wrap: wrap;
+}
+
+#tl {
+  transform: none;
+}
+
+#tr {
+  transform: none;
+}
+
+#bl {
+  transform: none;
+}
+
+#br {
+  transform: none;
+}
+
+#buttWrapUL {
+  float: left;
+}
+
+#buttWrapBL {
+  float: left;
+}
+
+#buttWrapUR {
+  float: right;
+}
+
+#buttWrapBR {
+  float: right;
+}
