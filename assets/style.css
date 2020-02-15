@@ -6,19 +6,19 @@
 }
 
 #tl {
-  transform: none;
+  transform: scaleX(1) scaleY(1);
 }
 
 #tr {
-  transform: none;
+  transform: scaleX(1) scaleY(1);
 }
 
 #bl {
-  transform: none;
+  transform: scaleX(1) scaleY(1);
 }
 
 #br {
-  transform: none;
+  transform: scaleX(1) scaleY(1);
 }
 
 #buttWrapUL {
