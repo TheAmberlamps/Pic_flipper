@@ -1,3 +1,26 @@
+var flipV = function(square) {
+  if (square.style.transform === "scaleX(1) scaleY(1)") {
+    square.style.transform = "scaleX(1) scaleY(-1)";
+  } else if (square.style.transform === "scaleX(-1) scaleY(1)") {
+    square.style.transform = "scaleX(-1) scaleY(-1)";
+  } else if (square.style.transform === "scaleX(-1) scaleY(-1)") {
+    square.style.transform = "scaleX(-1) scaleY(1)";
+  } else {
+    square.style.transform = "scaleX(1) scaleY(1)";
+  }
+};
+var flipH = function(square) {
+  if (square.style.transform === "scaleX(1) scaleY(1)") {
+    square.style.transform = "scaleX(-1) scaleY(1)";
+  } else if (square.style.transform === "scaleX(-1) scaleY(1)") {
+    square.style.transform = "scaleX(1) scaleY(1)";
+  } else if (square.style.transform === "scaleX(-1) scaleY(-1)") {
+    square.style.transform = "scaleX(1) scaleY(-1)";
+  } else {
+    square.style.transform = "scaleX(-1) scaleY(-1)";
+  }
+};
+
 document.addEventListener(
   "click",
   function(event) {
@@ -6,64 +29,31 @@ document.addEventListener(
     var bLeft = document.getElementById("bl");
     var bRight = document.getElementById("br");
     if (!event.target.matches(".button")) return;
-    if (event.target.matches("#tlDirU")) {
-      tLeft.style.transform = "scaleX(-1)";
-      console.log("tLeft= " + tLeft);
-      console.log(tLeft.style.transform.valueOf);
-    }
-    if (event.target.matches("#tr")) {
-      console.log("tRight= " + tRight);
-    }
-    if (event.target.matches("#bl")) {
-      bLeft.style.transform = "scaleY(-1) scaleX(-1)";
-      console.log("bLeft= " + bLeft);
-    }
-    if (event.target.matches("#br")) {
-      bRight.style.transform = "scaleY(-1)";
-      console.log("bRight= " + bRight);
-    }
-  },
-  false
-);
-
-/* document.addEventListener(
-  "click",
-  function(event) {
-    var tLeft = document.getElementById("tl");
-    if (!event.target.matches(".button")) return;
-    event.preventDefault();
-    if (event.target.matches("#tlDirU")) {
-      console.log("bap");
-      if (tLeft.style.transform === "scaleX(1) scaleY(1)") {
-        tLeft.style.transform = "scaleY(-1)";
-        console.log("tLeft= " + tLeft);
-      } else {
-        tLeft.style.transform = "scaleY(1)";
-        console.log("tLeft= " + tLeft);
-      }
-    } else if (event.target.matches("#tlDirL")) {
-      if (tLeft.style.transform === "scaleX(1)") {
-        tLeft.style.transform = "scaleX(-1)";
-      } else {
-        tLeft.style.transform = "scaleX(1)";
-        console.log("tLeft= " + tLeft);
-      }
-    } else if (event.target.matches("#tlDirR")) {
-      if (tLeft.style.transform === "scaleX(1)") {
-        tLeft.style.transform = "scaleX(-1)";
-      } else {
-        tLeft.style.transform = "scaleX(1)";
-        console.log("tLeft= " + tLeft);
-      }
-    } else {
-      if (tLeft.style.transform === "scaleY(1)") {
-        tLeft.style.transform = "scaleY(-1)";
-      } else {
-        tLeft.style.transform = "scaleY(1)";
-        console.log("tLeft= " + tLeft);
-      }
+    if (event.target.matches("#tlDirV")) {
+      flipV(tLeft);
+      console.log(tLeft.style.transform);
+    } else if (event.target.matches("#tlDirH")) {
+      flipH(tLeft);
+      console.log(tLeft.style.transform);
+    } else if (event.target.matches("#blDirV")) {
+      flipV(bLeft);
+      console.log(bLeft.style.transform);
+    } else if (event.target.matches("#blDirH")) {
+      flipH(bLeft);
+      console.log(bLeft.style.transform);
+    } else if (event.target.matches("#trDirV")) {
+      flipV(tRight);
+      console.log(tRight.style.transform);
+    } else if (event.target.matches("#trDirH")) {
+      flipH(tRight);
+      console.log(tRight.style.transform);
+    } else if (event.target.matches("#brDirV")) {
+      flipV(bRight);
+      console.log(bRight.style.transform);
+    } else if (event.target.matches("#brDirH")) {
+      flipH(bRight);
+      console.log(bRight.style.transform);
     }
   },
   false
 );
-*/
