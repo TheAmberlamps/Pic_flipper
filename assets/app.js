@@ -30,6 +30,7 @@ document.addEventListener(
     var bRight = document.getElementById("br");
     if (!event.target.matches(".button")) return;
     if (event.target.matches("#tlDirV")) {
+      console.log(tLeft.style.transform);
       flipV(tLeft);
       console.log(tLeft.style.transform);
     } else if (event.target.matches("#tlDirH")) {
@@ -50,7 +51,7 @@ document.addEventListener(
     } else if (event.target.matches("#brDirV")) {
       flipV(bRight);
       console.log(bRight.style.transform);
-    } else if (event.target.matches("#brDirH")) {
+    } else {
       flipH(bRight);
       console.log(bRight.style.transform);
     }
