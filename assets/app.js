@@ -30,6 +30,7 @@ document.addEventListener(
     var bRight = document.getElementById("br");
     if (!event.target.matches(".button")) return;
     if (event.target.matches("#tlDirV")) {
+      console.log(tLeft.style);
       console.log(tLeft.style.transform);
       flipV(tLeft);
       console.log(tLeft.style.transform);
