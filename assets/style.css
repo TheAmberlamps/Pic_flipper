@@ -5,6 +5,13 @@
   flex-wrap: wrap;
 }
 
+.pic {
+  height: 300px;
+  width: 300px;
+}
+
+/* these transform properties are inaccesible with my existing js for some reason, going to have to come back to this later and wrap my head around inline styles vs imported CSS */
+
 #tl {
   transform: scaleX(1) scaleY(1);
 }
